@@ -1,0 +1,10 @@
+version: '3'
+services:
+  message_store:
+    image: postgres:12.4
+    environment:
+      - POSTGRES_HOST_AUTH_METHOD=trust
+    volumes:
+      - ./.database-message-store:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
